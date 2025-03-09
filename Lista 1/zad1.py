@@ -103,7 +103,7 @@ def Pos_BFS(WKing,WRook,BKing,WhoStarts,mode='debug'):
     if(mode=='debug'):
         print(moves_made, len(moves_made))
     if(mode=='input'):
-        pass
+        print(len(moves_made))
 
 data = input()
 WhoMoves,WKing,WRook,BKing = data.split()
