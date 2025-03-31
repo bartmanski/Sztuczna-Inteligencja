@@ -119,6 +119,18 @@ class state:
             else:
                 states.append(state.move_all(0,-1,'L'))
         return min(states, key=lambda x: len(x.positions))
+    
+    def min_niepewnosci2(self):
+        few_random_moves_to_deacrease_pos = rd.randint(len(self.positions)//2,len(self.positions))
+        states = [self]
+        state = states[-1]
+        for i in range(few_random_moves_to_deacrease_pos):
+            if(i< few_random_moves_to_deacrease_pos//2):
+                    states.append(state.move_all(-1,0,'U'))
+            else:
+                    states.append(state.move_all(0,-1,'L'))
+        return min(states, key=lambda x: len(x.positions))
+    
     def solve(self, end_positions, kolumny, wiersze, prepocessed_heuristic=None):
         
         start_state = self.min_niepewnosci()
