@@ -212,16 +212,16 @@ class Jungle:
         assert player == self.curplayer
         move = tuple(int(m) for m in move_string.split())
         if len(move) != 4:
-            raise WrongMove
+            raise "WrongMove"
         possible_moves = self.moves(player)
         if not possible_moves:
             if move != (-1, -1, -1, -1):
-                raise WrongMove
+                raise "WrongMove"
             move = None
         else:
             move = ((move[0], move[1]), (move[2], move[3]))
             if move not in possible_moves:
-                raise WrongMove
+                raise "WrongMove"
         self.do_move(move)
         
         if self.victory(player):

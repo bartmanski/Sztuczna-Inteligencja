@@ -1,0 +1,3 @@
+
+
+python ai_dueler_2023.py --num_games 10 jungle "/mnt/c/Users/Bartosz Kebel/Desktop/Sztuczna-Inteligencja/Lista 4/Zad3-Jungle/Alpha-Beta_Jungla.sh" "/mnt/c/Users/Bartosz Kebel/Desktop/Sztuczna-Inteligencja/Lista 4/Zad3-Jungle/MCTS_Jungle.sh"
