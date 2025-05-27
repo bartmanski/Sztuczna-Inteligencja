@@ -147,9 +147,6 @@ class Reversi:
 
         if maximizingPlayer:
             value = -Reversi.INFINITY
-            # moves =  self.moves(my_player)
-            # if Reversi.ROUND < 10 :
-            #     moves = sorted(moves,key=self.shallow)
             for move in self.moves(my_player):
                 self.do_move(move, my_player)
                 value = max(
@@ -216,9 +213,8 @@ class Reversi:
                 self.board[0][7] == player or self.board[7][7] == player
             ):
                 ret += 1
-            # elif self.board[i][0] == player and self.board[i][6] is None: ret+=1
         return ret
-
+    
     def bad_corner(self, player):
         count = 0
         for corner, opposite_corner in [
@@ -239,15 +235,13 @@ class Reversi:
     def score(self, player):
         result = self.result(player)
         result = 0
+        # przejete rogi
         result -= self.CORNER * self.in_corner(1 - player)
         result += self.CORNER * self.in_corner(player)
+        # oddaje rogi
         result -= self.BAD_CORNER * self.bad_corner(1 - player)
         result += self.BAD_CORNER * self.bad_corner(player)
-        # result += 0.5* self.borders(player)
-        # result -= 0.5*self.borders(1-player)
-        # if result < 0 :
-        # result += len(self.moves(player))
-        # if(Reversi.ROUND > -1):
+        # mobility
         result += len(self.moves(player))
         result -= len(self.moves(1 - player))
         return result

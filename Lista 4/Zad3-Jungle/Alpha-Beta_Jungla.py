@@ -235,9 +235,9 @@ class Jungle:
 
             x, y = pos
             if 2 <= x <= 4 and 2 <= y <= 6:
-                score += 2  # center control
+                score += 2
             if player == 0:
-                score += y  # advanced bonus
+                score += y
             else:
                 score += (8 - y)
 
